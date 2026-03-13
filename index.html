@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="tela-pergunta">
+    <img src="fundopergunta1.jpg" alt="" id="fundo-pergunta">
+    <div id="caixa-pergunta">
+      <div id="botoes">
+        <img src="sim.png" alt="Sim" id="btn-sim" onclick="responderSim()">
+        <img src="nao.png" alt="Não" id="btn-nao"
+             onmouseover="fugirNao()" ontouchstart="fugirNao()">
+      </div>
+    </div>
+  </div>
+
+  <div id="tela-resposta">
+    <img src="fundoresposta1.jpg" alt="" id="fundo-resposta">
+    <div id="caixa-resposta">
+      <img src="comemoracao_.gif" alt="" id="gif-comemoracao">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
