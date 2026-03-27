@@ -5,53 +5,53 @@
 }
 
 html, body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  font-family: 'Courier New', monospace;
-  background: #000;
+  background: white;
 }
 
 #tela-pergunta {
   position: fixed;
-  inset: 0;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
   background-image: url('1.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-color: white;
 }
 
 #tela-resposta {
   position: fixed;
-  inset: 0;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
   background-image: url('2.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-color: white;
   display: none;
 }
 
 #caixa-pergunta {
   position: absolute;
   top: 60%;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: top;
+  flex-direction: row;
+  align-items: center;
+  gap: 5vw;
   z-index: 1;
 }
 
-#botoes {
-  display: flex;
-  align-items: top;
-  gap: 5vw;
-}
-
 #btn-sim {
-  width: clamp(100px, 38vw, 260px);
+  width: clamp(140px, 45vw, 320px);
   cursor: pointer;
   transition: transform 0.15s;
-  z-index: 2;
 }
 
 #btn-sim:hover {
@@ -59,7 +59,7 @@ html, body {
 }
 
 #btn-nao {
-  width: clamp(100px, 38vw, 260px);
+  width: clamp(140px, 45vw, 320px);
   cursor: not-allowed;
   position: fixed;
   z-index: 2;
@@ -67,18 +67,15 @@ html, body {
 
 #caixa-resposta {
   position: absolute;
-  inset: 0;
-  z-index: 1;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 #gif-comemoracao {
   width: clamp(200px, 70vw, 500px);
-}
-
-@keyframes popIn {
-  from { opacity: 0; transform: scale(0.7); }
-  to   { opacity: 1; transform: scale(1); }
 }
