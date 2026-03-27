@@ -1,40 +1,41 @@
 const btnNao = document.getElementById('btn-nao');
+const btnSim = document.getElementById('btn-sim');
 
-// Espera o botão carregar pra pegar o tamanho real
+// Posiciona o botão "Não" logo abaixo do "Sim" quando a página carrega
 window.addEventListener('load', () => {
-  let posX = window.innerWidth / 2 - btnNao.offsetWidth / 2;
-  let posY = window.innerHeight * 0.72;
-
-  btnNao.style.left = posX + 'px';
-  btnNao.style.top  = posY + 'px';
-
-  window._posX = posX;
-  window._posY = posY;
+    resetarBotaoNao();
 });
 
+// Se a janela mudar de tamanho, reposiciona para não quebrar
+window.addEventListener('resize', () => {
+    resetarBotaoNao();
+});
+
+function resetarBotaoNao() {
+    const rectSim = btnSim.getBoundingClientRect();
+    // Coloca o botão NÃO 20px abaixo do botão SIM
+    btnNao.style.left = rectSim.left + 'px';
+    btnNao.style.top = (rectSim.bottom + 20) + 'px';
+}
+
 function fugirNao() {
-  let posX = window._posX;
-  let posY = window._posY;
-  const margem = 20;
-  let novoX, novoY;
-  let tentativas = 0;
-  do {
-    novoX = margem + Math.random() * (window.innerWidth - btnNao.offsetWidth - margem * 2);
-    novoY = margem + Math.random() * (window.innerHeight - btnNao.offsetHeight - margem * 2);
-    tentativas++;
-  } while (
-    Math.abs(novoX - posX) < 100 &&
-    Math.abs(novoY - posY) < 100 &&
-    tentativas < 10
-  );
-  window._posX = novoX;
-  window._posY = novoY;
-  btnNao.style.transition = 'left 0.25s ease, top 0.25s ease';
-  btnNao.style.left = novoX + 'px';
-  btnNao.style.top  = novoY + 'px';
+    const larguraBotao = btnNao.offsetWidth;
+    const alturaBotao = btnNao.offsetHeight;
+
+    // Calcula limites para o botão não sair da tela
+    const maxX = window.innerWidth - larguraBotao;
+    const maxY = window.innerHeight - alturaBotao;
+
+    // Gera coordenadas aleatórias
+    const novoX = Math.random() * maxX;
+    const novoY = Math.random() * maxY;
+
+    // Aplica as novas coordenadas
+    btnNao.style.left = novoX + 'px';
+    btnNao.style.top = novoY + 'px';
 }
 
 function responderSim() {
-  document.getElementById('tela-pergunta').style.display = 'none';
-  document.getElementById('tela-resposta').style.display = 'flex';
+    document.getElementById('tela-pergunta').style.display = 'none';
+    document.getElementById('tela-resposta').style.display = 'flex';
 }
