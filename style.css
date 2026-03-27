@@ -12,39 +12,32 @@ html, body {
   background: #000;
 }
 
-/* TELAS */
-#tela-pergunta,
+#tela-pergunta {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('1.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
 #tela-resposta {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
-}
-
-#tela-resposta {
+  background-image: url('2.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   display: none;
 }
 
-/* FUNDOS */
-#fundo-pergunta,
-#fundo-resposta {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  object-position: center top;
-  z-index: 0;
-}
-
-/* BOTÕES */
 #caixa-pergunta {
   position: absolute;
+  top: 55%;
   left: 0;
   right: 0;
   z-index: 1;
@@ -54,10 +47,12 @@ html, body {
 
 #botoes {
   display: flex;
+  gap: 5vw;
   align-items: center;
 }
 
 #btn-sim {
+  width: clamp(120px, 40vw, 280px);
   cursor: pointer;
   transition: transform 0.15s;
   z-index: 2;
@@ -68,12 +63,12 @@ html, body {
 }
 
 #btn-nao {
+  width: clamp(120px, 40vw, 280px);
   cursor: not-allowed;
   position: fixed;
   z-index: 2;
 }
 
-/* TELA RESPOSTA */
 #caixa-resposta {
   position: absolute;
   inset: 0;
@@ -90,55 +85,18 @@ html, body {
   max-width: 600px;
 }
 
-/* ================================
-   📱 CELULAR (até 600px)
-   ================================ */
+/* 📱 CELULAR */
 @media (max-width: 600px) {
-  #caixa-pergunta {
-    bottom: 18vh;
-  }
-
-  #botoes {
-    gap: 6vw;
-  }
-
-  #btn-sim {
-    width: 44vw;
-  }
-
-  #btn-nao {
-    width: 44vw;
-  }
-
-  #gif-comemoracao {
-    width: 88vw;
-  }
+  #botoes { gap: 6vw; }
+  #btn-sim, #btn-nao { width: 44vw; }
+  #gif-comemoracao { width: 88vw; }
 }
 
-/* ================================
-   💻 NOTEBOOK / DESKTOP (acima de 600px)
-   ================================ */
+/* 💻 NOTEBOOK */
 @media (min-width: 601px) {
-  #caixa-pergunta {
-    bottom: 12vh;
-  }
-
-  #botoes {
-    gap: 40px;
-  }
-
-  #btn-sim {
-    width: 280px;
-  }
-
-  #btn-nao {
-    width: 280px;
-  }
-
-  #gif-comemoracao {
-    width: 50vw;
-    max-width: 600px;
-  }
+  #botoes { gap: 40px; }
+  #btn-sim, #btn-nao { width: 280px; }
+  #gif-comemoracao { width: 50vw; max-width: 600px; }
 }
 
 @keyframes popIn {
