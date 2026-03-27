@@ -59,7 +59,7 @@ html, body {
 }
 
 #btn-nao {
-  width: clamp(140px, 45vw, 320px);
+  width: clamp(240px, 65vw, 420px);
   cursor: not-allowed;
   position: fixed;
   z-index: 2;
