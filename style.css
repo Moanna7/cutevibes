@@ -8,74 +8,62 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: white;
+  background-color: white;
+  font-family: sans-serif;
 }
 
 #tela-pergunta {
-  position: fixed;
-  top: 0; left: 0;
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-image: url('1.png');
   background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: white;
+  background-position: center;
 }
 
+/* Tamanho dos botões (Imagens) */
+#btn-sim, #btn-nao {
+  position: absolute;
+  /* Isso garante que fiquem grandes no celular e controlados no PC */
+  width: clamp(180px, 55vw, 350px); 
+  z-index: 10;
+  cursor: pointer;
+}
+
+#btn-sim {
+  top: 55%; /* Ajuste a altura conforme a sua imagem de fundo */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s;
+}
+
+#btn-sim:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+#btn-nao {
+  /* A posição inicial será definida pelo JavaScript */
+  cursor: not-allowed;
+  transition: all 0.2s ease;
+}
+
+/* Tela de Resposta */
 #tela-resposta {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-image: url('2.png');
   background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: white;
-  display: none;
-}
-
-#caixa-pergunta {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5vw;
-  z-index: 1;
-}
-
-#btn-sim {
-  width: clamp(200px, 45vw, 480px);
-  cursor: pointer;
-  transition: transform 0.15s;
-}
-
-#btn-sim:hover {
-  transform: scale(1.08);
-}
-
-#btn-nao {
-  width: clamp(200px, 65vw, 480px);
-  cursor: not-allowed;
-  position: fixed;
-  z-index: 2;
-}
-
-#caixa-resposta {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
+  background-position: center;
+  display: none; /* Começa escondido */
   justify-content: center;
-  z-index: 1;
+  align-items: center;
+  z-index: 100;
 }
 
 #gif-comemoracao {
-  width: clamp(200px, 70vw, 500px);
+  width: 80%;
+  max-width: 500px;
 }
