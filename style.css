@@ -15,44 +15,40 @@ html, body {
 #tela-pergunta {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
   background-image: url('1.png');
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
 #tela-resposta {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
   background-image: url('2.png');
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
   display: none;
 }
 
 #caixa-pergunta {
   position: absolute;
-  top: 55%;
+  top: 60%;
   left: 0;
   right: 0;
-  z-index: 1;
   display: flex;
   justify-content: center;
+  z-index: 1;
 }
 
 #botoes {
   display: flex;
-  gap: 5vw;
   align-items: center;
+  gap: 5vw;
 }
 
 #btn-sim {
-  width: clamp(120px, 40vw, 280px);
+  width: clamp(100px, 38vw, 260px);
   cursor: pointer;
   transition: transform 0.15s;
   z-index: 2;
@@ -63,7 +59,7 @@ html, body {
 }
 
 #btn-nao {
-  width: clamp(120px, 40vw, 280px);
+  width: clamp(100px, 38vw, 260px);
   cursor: not-allowed;
   position: fixed;
   z-index: 2;
@@ -74,29 +70,12 @@ html, body {
   inset: 0;
   z-index: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
 }
 
 #gif-comemoracao {
-  width: 80vw;
-  max-width: 600px;
-}
-
-/* 📱 CELULAR */
-@media (max-width: 600px) {
-  #botoes { gap: 6vw; }
-  #btn-sim, #btn-nao { width: 44vw; }
-  #gif-comemoracao { width: 88vw; }
-}
-
-/* 💻 NOTEBOOK */
-@media (min-width: 601px) {
-  #botoes { gap: 40px; }
-  #btn-sim, #btn-nao { width: 280px; }
-  #gif-comemoracao { width: 50vw; max-width: 600px; }
+  width: clamp(200px, 70vw, 500px);
 }
 
 @keyframes popIn {
