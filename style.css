@@ -49,7 +49,7 @@ html, body {
 }
 
 #btn-sim {
-  width: clamp(140px, 45vw, 320px);
+  width: clamp(200px, 45vw, 480px);
   cursor: pointer;
   transition: transform 0.15s;
 }
@@ -59,7 +59,7 @@ html, body {
 }
 
 #btn-nao {
-  width: clamp(240px, 65vw, 420px);
+  width: clamp(200px, 65vw, 480px);
   cursor: not-allowed;
   position: fixed;
   z-index: 2;
