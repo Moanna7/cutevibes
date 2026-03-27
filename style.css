@@ -37,13 +37,13 @@ html, body {
   left: 0;
   right: 0;
   display: flex;
-  justify-content: center;
+  justify-content: top;
   z-index: 1;
 }
 
 #botoes {
   display: flex;
-  align-items: center;
+  align-items: top;
   gap: 5vw;
 }
 
